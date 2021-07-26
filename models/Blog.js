@@ -1,8 +1,8 @@
-const { Model, DataTypes} = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('/Users/shane/Desktop/GroupProject/movie-murmurs/config/connection.js');
 
+class Blog extends Model { }
 
-class Blog extends Model {}
 
 Blog.init(
   {
@@ -16,16 +16,13 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    text: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     movie: {
       type: DataTypes.STRING,
       allowNull: false
-    },
-    post_url: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isURL: true
-      }
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -39,7 +36,7 @@ Blog.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post'
+    modelName: 'blog'
   }
 );
 

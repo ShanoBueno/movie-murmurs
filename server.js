@@ -1,6 +1,6 @@
 const express = require('express');
-const routes = require('/Users/shane/Desktop/GroupProject/movie-murmurs/routes');
-const sequelize = require('/Users/shane/Desktop/GroupProject/movie-murmurs/config/connection.js');
+const routes = require('./routes');
+const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;

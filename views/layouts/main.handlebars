@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Murmurs</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Movie Murmurs</a>
+            </h1>
+            <div>
+                {{#if logged in}}
+                <a href="/hub">hub</a>
+                <button id="signout" class="btn-no-style">Sign Out</button>
+                {{else}}
+                <a href="/signin">Sign In</a>
+                {{/if}}
+            </div>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+        <footer>
+            "FOR HELP DIAL M FOR MURMUR"
+        </footer>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/signout.js"></script>
+</body>
+</html>
+
+<!-- added all the handlebars, just need to create these JS files:
+ stlye.css
+ signout.js
+ login.js
+ addpost.js
+ reply.js
+ edit-thread.js
+ erase-thread.js
+ highfive.js

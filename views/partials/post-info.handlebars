@@ -1,0 +1,11 @@
+<article class="thread">
+  <div class="title">
+    <a href="{{thread_url}}" target="_blank">{{title}}</a>
+    <span>({{format_url thread_url}})</span>
+  </div>
+  <div class="meta">
+    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+    |
+    <a href="/thread/{{id}}">{{reply.length}} {{format_plural "reply" reply.length}}</a>
+  </div>
+</article>

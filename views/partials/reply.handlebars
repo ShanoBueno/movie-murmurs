@@ -1,0 +1,12 @@
+<div class="replies">
+  {{#each this}}
+  <section class="reply">
+    <div class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{reply_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>

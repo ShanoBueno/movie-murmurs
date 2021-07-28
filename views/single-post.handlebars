@@ -1,0 +1,21 @@
+  {{> thread-info thread}}
+
+{{#if loggedIn}}
+<form class="whisper-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">send whisper</button>
+    <button type="button" class="highfive-btn">High Five</button>
+  </div>
+</form>
+{{/if}}
+
+{{> reply post.reply}}
+
+{{#if loggedIn}}
+<script src="/javascript/reply.js"></script>
+<script src="/javascript/highfive.js"></script>
+{{/if}}

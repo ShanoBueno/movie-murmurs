@@ -1,0 +1,35 @@
+<article>
+  <a href="/dashboard"> &larr; Return to Dashboard</a>
+  <h2>
+    Edit thread
+  </h2>
+  <form class="edit-thread-form">
+    <div>
+      <input name="thread-title" type="text" value="{{thread.title}}" />
+      <span>({{format_url thread.thread_url}})</span>
+    </div>
+    <div>
+      {{thread.vote_count}} {{format_plural "point" thread.vote_count}} by you on {{format_date thread.created_at}}
+      |
+      <a href="/thread/{{thread.id}}">{{thread.reply.length}} {{format_plural "replies" thread.reply.length}}</a>
+    </div>
+    <button type="submit">Keep thread</button>
+    <button type="button" class="erase-thread-btn">Erase thread</button>
+  </form>
+</article>
+
+<form class="reply-form">
+  <div>
+    <textarea name="reply-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Reply to Murmer</button>
+  </div>
+</form>
+
+{{> reply thread.reply}}
+
+<script src="/javascript/edit-thread.js"></script>
+<script src="/javascript/erase-thread.js"></script>
+<script src="/javascript/reply.js"></script>

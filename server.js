@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('movie-murmurs/controllers'));
+app.use(require('./controllers'));
 
 
 

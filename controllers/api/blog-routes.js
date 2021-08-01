@@ -1,3 +1,6 @@
+const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
+
 const router = require('express').Router(); 
 const {Blog, User} = require('../../models')
 
@@ -11,12 +14,16 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbBlogData => res.json(dbBlogData))
+    .then(dbBlogData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+
+      res.render('homepage', { posts });;
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
-});
+  });
 
 router.get('/:id', (req, res) => {
   Blog.findOne({

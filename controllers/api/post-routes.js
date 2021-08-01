@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { Blog, User } = require('../../models');
 
 // get all users
@@ -25,7 +26,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    attributes: ['id', 'movie', 'title', 'created_at'],
+    attributes: ['id', 'movie', 'title', 'created_at','text'],
     include: [
       {
         model: User,

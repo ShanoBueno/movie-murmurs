@@ -1,7 +1,14 @@
-<ol class="thread-list">
-  {{#each threads as |thread|}}
+<div>
+<ol class="post-list">
+  {{#each posts}}
   <li>
-    {{> thread-info thread }}
+    <article class="post">
+      <div class="title">
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+        <span>({{post_url}})</span>
+      </div>
+    </article>
   </li>
   {{/each}}
 </ol>
+</div>
